@@ -41,7 +41,15 @@ As we can see above the dataframe contains 100,001 rows and 4 columsn, thus we'v
 
 However, because these strings were taken off of twitter, they contain emojis, urls and other types of data that will most likely affect the efficacy of our analysis. 
 
-**Removing @mentions and hash symbols**
+```
+print('hi')
+```
+
+**Removing Emojis**
+
+**Removing urls**
+
+**Removing @mentions and hashtags**
 
 
 
