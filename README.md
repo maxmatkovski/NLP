@@ -88,11 +88,10 @@ def clean_string(a):
 
 ```
 
-**Testing clean_string function**
-String before processing
+**String before processing**
 ![Image!](Images/image4.png)
 
-After processing string
+**After processing string**
 ![Image!](Images/image5.png)
 
 As we can see the string is being processed correctly, and we've successfully removed the undesirable elements. 
