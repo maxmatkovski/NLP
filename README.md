@@ -24,6 +24,18 @@ Because snscrape doesn't limit the amount of tweets you can scrape, I thought it
 
 Currently, the largest amount of tweets I've scraped is 10,000. I'm currently run the script with 100,000 tweets, but it may take a very long time. My goal is to ultimately scrape 1,000,000 tweets, but I'm not sure my computer will be able to execute it.
 
+Ultimately, I decided to go with 100,000 tweets because I was able to execute it and I think this wil be more than enough to get an accurate understanding of the sentiment on twitter .
+
+
+## Exploratory Data Analysis
+
+After scraping 100,000 tweets relating to climate change, this is what my data set looks like. The features include
+- Datetime (The exact timestamp the tweet was posted)
+- Tweet Id (A unique identification number for a specific tweet)
+- Text (The text of the tweet)
+- Useername (The official twitter username that posted the tweet)
+
+![Image!](Images/image3.png)
 
 
 ## References
