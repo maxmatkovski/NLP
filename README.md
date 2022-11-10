@@ -6,7 +6,7 @@ With the recent midterm elections passed the controversial topic of climate chan
 
 In order to better understand the general view of climate change, I thought to look to twitter as good place to measure public sentiment of Climate Change. 
 
-![Image!](Images/image1.png)
+![Image!](Images/image2.png)
 
 ## Gathering Data
 
