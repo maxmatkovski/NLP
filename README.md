@@ -58,8 +58,34 @@ As we can see above the dataframe contains 100,001 rows and 4 columsn, thus we'v
 
 However, because these strings were taken off of twitter, they contain emojis, urls and other types of data that will most likely affect the efficacy of our analysis. 
 
+Because the tweets are a string type, I decided that the easiest way to accomplish what I wanted would be to use regular expressions. I managed to write this function below with the help of some documentation which removes emojis, @mentions, hashtags, and urls. 
+
+
 ```
-print('hi')
+def clean_string(a):
+    
+    # remove emoji's
+    emoji_pattern = re.compile("["
+                           u"\U0001F600-\U0001F64F"  # emoticons
+                           u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+                           u"\U0001F680-\U0001F6FF"  # transport & map symbols
+                           u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           u"\U00002702-\U000027B0"
+                           u"\U000024C2-\U0001F251"
+                           "]+", flags=re.UNICODE)
+    a = emoji_pattern.sub(r'', a)
+
+    # remove @ symbols and hashtags
+    re_list = ['@[A-Za-z0–9_]+', '#']
+    combined_re = re.compile( '|'.join( re_list) )
+    a = re.sub(combined_re,'',a)
+
+    
+    # remove urls from text
+    pattern = re.compile(r'(https?://)?(www\.)?(\w+\.)?(\w+)(\.\w+)(/.+)?')
+    a = re.sub(pattern,'',a)
+    print(a)
+
 ```
 
 **Removing Emojis**
@@ -83,4 +109,6 @@ print('hi')
 
 3. https://medium.com/codex/making-wordcloud-of-tweets-using-python-ca114b7a4ef4
 
-4. 
+4. https://gist.github.com/slowkow/7a7f61f495e3dbb7e3d767f97bd7304b#file-remove-emoji-py-L28
+
+5. 
