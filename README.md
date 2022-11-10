@@ -14,7 +14,24 @@ I've tried scraping tweets off of twitter in the past, but I've always run into 
 
 Here's what the code I used to scrape tweets looked like. (Source referenced below).
 
-![Image!](Images/image1.png)
+```
+import snscrape.modules.twitter as sntwitter
+import pandas as pd
+
+# declare variables and query
+tweets_list = []
+tweet_count = 100000
+query = "Climate Change since:2021-01-01 until:2022-11-09" 
+
+# use TwitterSearchScraper to scrape data and append tweets to list
+for i,tweet in enumerate(sntwitter.TwitterSearchScraper(query).get_items()):
+    if i>tweet_count:
+        break
+    tweets_list.append([tweet.date, tweet.id, tweet.content, tweet.user.username])
+    
+# Creating a dataframe from the tweets list above
+tweets_df = pd.DataFrame(tweets_list, columns=['Datetime', 'Tweet Id', 'Text', 'Username'])
+```
 
 The query above searches twitter for the key word **"Climate Change"** and returns the specified amount of tweets. Based off of the paramaters I set, the scraper would scrape tweets from January 1, 2021 until 11:59 pm of November 8, 2022. This is helfpul as we'll be able to capture tweets from the 2022 Midterm Election. Tweets were returned in order of most recent. 
 
