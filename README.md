@@ -27,15 +27,27 @@ Currently, the largest amount of tweets I've scraped is 10,000. I'm currently ru
 Ultimately, I decided to go with 100,000 tweets because I was able to execute it and I think this wil be more than enough to get an accurate understanding of the sentiment on twitter .
 
 
-## Exploratory Data Analysis
+## Data Processing
 
-After scraping 100,000 tweets relating to climate change, this is what my data set looks like. The features include
-- Datetime (The exact timestamp the tweet was posted)
-- Tweet Id (A unique identification number for a specific tweet)
-- Text (The text of the tweet)
-- Useername (The official twitter username that posted the tweet)
+After scraping 100,000 tweets with the keyword **"Climate Change"**, this is what my data set looks like. The features include:
+- **Datetime** (The exact timestamp the tweet was posted)
+- **Tweet Id** (A unique identification number for a specific tweet)
+- **Text** (The text of the tweet)
+- **Username** (The official twitter username that posted the tweet)
 
 ![Image!](Images/image3.png)
+
+As we can see above the dataframe contains 100,001 rows and 4 columsn, thus we've succesfully scraped over 100,000 tweets. 
+
+However, because these strings were taken off of twitter, they contain emojis, urls and other types of data that will most likely affect the efficacy of our analysis. 
+
+**Removing @mentions and hash symbols**
+
+
+
+
+
+## Exploratory Data Analysis
 
 
 ## References
@@ -44,4 +56,6 @@ After scraping 100,000 tweets relating to climate change, this is what my data s
 
 2. https://pypi.org/project/snscrape/
 
-3. 
+3. https://medium.com/codex/making-wordcloud-of-tweets-using-python-ca114b7a4ef4
+
+4. 
