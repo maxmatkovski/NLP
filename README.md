@@ -88,17 +88,21 @@ def clean_string(a):
 
 ```
 
-**Removing Emojis**
+**Testing clean_string function**
+String before processing
+![Image!](Images/image4.png)
 
-**Removing urls**
+After processing string
+![Image!](Images/image5.png)
 
-**Removing @mentions and hashtags**
-
+As we can see the string is being processed correctly, and we've successfully removed the undesirable elements. 
 
 
 
 
 ## Exploratory Data Analysis
+
+-----------------------------------------
 
 
 ## References
