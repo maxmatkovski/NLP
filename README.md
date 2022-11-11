@@ -1,4 +1,4 @@
-# Natural Language Processing of Climate Change Tweets
+# Natural Language Processing of 100,000 Climate Change Tweets
 
 ## Introduction
 
