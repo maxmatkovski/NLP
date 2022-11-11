@@ -80,11 +80,11 @@ def clean_string(a):
     combined_re = re.compile( '|'.join( re_list) )
     a = re.sub(combined_re,'',a)
 
-    
     # remove urls from text
     pattern = re.compile(r'(https?://)?(www\.)?(\w+\.)?(\w+)(\.\w+)(/.+)?')
     a = re.sub(pattern,'',a)
-    print(a)
+    output = a
+    return output
 
 ```
 
@@ -96,8 +96,14 @@ def clean_string(a):
 
 As we can see the string is being processed correctly, and we've successfully removed the undesirable elements. 
 
+Now I needed to run this function on all 100,000 tweets in the dataset. I did this via a single for loop. The time complexity of the function call is O(N), and I don't think there's a more efficient way to call the function. 
 
+```
+for i in range(100001):
+    df['Text'][i] = clean_string(df.iloc[i]['Text'])
+```
 
+Due to the size of this data, one thing that I'm worried about is run time, but the function only took about two minutes to fully run all 100,000 iterations. 
 
 ## Exploratory Data Analysis
 
