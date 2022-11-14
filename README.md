@@ -140,7 +140,7 @@ for i in range(100000):
     processed_tweets.append(tokenize_and_process(df.Text[i]))
 ```
 
-![Image!] (Images/image6.png)
+![Image!](Images/image6.png)
 
 **As we can see we've successfully processed 100,000 of our tweets**
 
@@ -149,7 +149,8 @@ Next we will save all of our processed tweets into one giant string.
 ```
 string = pd.Series(processed_tweets).str.cat(sep=' ')
 ```
-![Image!] (Images/image7.png)
+![Image!](Images/image7.png)
+
 **Our output string**
 
 
