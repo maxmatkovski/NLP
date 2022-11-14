@@ -107,8 +107,59 @@ Due to the size of this data, one thing that I'm worried about is run time, but 
 
 ## Exploratory Data Analysis
 
------------------------------------------
+Now that we've removed undesirable text elements from our data we can begin to explore the data from our data. 
 
+I'd like to find the most common words in the data to understand what words are most frequently associated with "Climate Change" on twitter. 
+
+Before doing so, we need to do a little bit more processing on the text data. We will use  **WordPunctTokenizer** from the **nltk** libary to tokenize each tweet. Tokenization is simply the process of separating a text string into individual words. We will then convert each word to lower case and save the words in one large string. 
+
+We can accomplish this data processing with the code below. 
+
+```
+from nltk.tokenize import WordPunctTokenizer
+tk = WordPunctTokenizer()
+
+def tokenize_and_process(d):
+    
+    d = str(d)
+    lower_case = d.lower()
+    words = tk.tokenize(lower_case)
+    result_words = [x for x in words if len(x) > 2]
+    return (" ".join(result_words)).strip()
+
+```
+Now we will run this function on all 100,000 tweets in our data set. 
+
+
+```
+processed_tweets = []
+print ('Processsing and tokenizing tweets')
+for i in range(100000):
+    if i % 5000 == 0:
+        print("Tweets {} of {} have been processed".format(i, 100000))
+    processed_tweets.append(tokenize_and_process(df.Text[i]))
+```
+
+![Image!] (Images/image6.png)
+
+**As we can see we've successfully processed 100,000 of our tweets**
+
+Next we will save all of our processed tweets into one giant string. 
+
+```
+string = pd.Series(processed_tweets).str.cat(sep=' ')
+```
+![Image!] (Images/image7.png)
+**Our output string**
+
+
+---------------------------------------------------
+
+
+## Further ideas
+
+Bert model prediction
+plot histogram of the responses and overlay with the 'predicted ideas of twitter political skew'
 
 ## References
 
