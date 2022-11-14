@@ -149,18 +149,48 @@ Next we will save all of our processed tweets into one giant string.
 ```
 string = pd.Series(processed_tweets).str.cat(sep=' ')
 ```
+**Our output string**
 ![Image!](Images/image7.png)
 
-**Our output string**
 
+### Generating Word Cloud
+
+Now we will generate a word cloud based on the string we've created above. 
+
+Before generating the word cloud. We need to filter out Stop Words. Stop words are words in Natural Language Processing which we deem will not provide us with any semantic insight. 
+
+The wordcloud module STOPWORDS comes with a preset list of stop words. We will also add in a few additional stop words to filter out unneccesary climate change related words. 
+
+```
+from wordcloud import STOPWORDS
+stopwords = set(STOPWORDS)
+custom_stopwords = ['climate', 'climate change', 'change', 'climatechange']
+stopwords.update(custom_stopwords)
+```
+
+Now that we've accounted for stop words we can generate a word cloud with 200 most common words from our 100,000 scraped tweets
+
+```
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+wordcloud = WordCloud(width=1600, stopwords=stopwords,height=800,max_font_size=200,max_words=500,collocations=False, background_color='black').generate(string)
+plt.figure(figsize=(40,30))
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
+```
+
+![Image!](Images/word_cloud.png)
+200 MOST COMMON WORDS FROM 100,000 CLIMATE CHANGE TWEETS
 
 ---------------------------------------------------
 
 
 ## Further ideas
 
-Bert model prediction
-plot histogram of the responses and overlay with the 'predicted ideas of twitter political skew'
+- Bert model prediction
+- plot histogram of the responses and overlay with the 'predicted ideas of twitter political skew'
 
 ## References
 
@@ -172,4 +202,5 @@ plot histogram of the responses and overlay with the 'predicted ideas of twitter
 
 4. https://gist.github.com/slowkow/7a7f61f495e3dbb7e3d767f97bd7304b#file-remove-emoji-py-L28
 
-5. 
+5. https://www.wikiwand.com/en/Stop_words
+
