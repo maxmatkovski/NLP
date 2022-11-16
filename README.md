@@ -246,6 +246,10 @@ for i in range(length):
 
 I did this with the for loop above. The model ended up taking much longer to run than I expected. To iterate over all 100,000 tweets it took a little over four hours to run. 
 
+# Results
+After running BERT on all 100,000 tweets, the distribution the model assigned was as follows. 
+
+![Image!](Images/final-bar-graph.png)
 
 ## Further ideas
 
