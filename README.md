@@ -263,9 +263,9 @@ As we can see the distribution of sentiment definitely skews towards negative tw
 - Mode: **1**
 - Standard Deviation: **1.63**
 
-Of all the 100,000 tweets the average was 2.786, meaning that the average tweet on twitter about climate change is slightly more negative than neutral. 
+Of all the 100,000 tweets the average was **2.786**, meaning that the average tweet on twitter about climate change is slightly more negative than neutral. 
 
-Given the data, it's clear that twitter is a place that fosters extreme opinions. Over 60% of the tweets were classified as a either a 1 or a 5. Thus, twitter is clearly a place that is unideal to educate oneself about important issues such as climate change. 
+Given the data, it's clear that twitter is a place that fosters extreme opinions. **Over 60%** of the tweets were classified as a either a 1 or a 5. Thus, twitter is clearly a place that is unideal to educate oneself about important issues such as climate change. 
 
 ## References
 
