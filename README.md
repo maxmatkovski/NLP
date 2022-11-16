@@ -113,11 +113,11 @@ Due to the size of this data, one thing that I'm worried about the future is run
 
 ## Exploratory Data Analysis
 
-Now that we've removed undesirable text elements from our data we can begin to explore the data from our data. 
+Now that we've removed undesirable text elements from our data we can begin to explore the tweets. 
 
 I'd like to find the most common words in the data to understand what words are most frequently associated with "Climate Change" on twitter. 
 
-Before doing so, we need to do a little bit more processing on the text data. We will use  **WordPunctTokenizer** from the **nltk** libary to tokenize each tweet. Tokenization is simply the process of separating a text string into individual words. We will then convert each word to lower case and save the words in one large string. 
+Before doing so, we need to do a little bit more processing on the text data. We will use  **WordPunctTokenizer** from the **NLTK** libary to tokenize each tweet. Tokenization is simply the process of separating a text string into individual words. We will then convert each word to lower case and save the words in one large string. 
 
 We can accomplish this data processing with the code below. 
 
@@ -188,14 +188,14 @@ plt.show()
 ```
 
 ![Image!](Images/word_cloud.png)
-### 200 MOST COMMON WORDS FROM 100,000 CLIMATE CHANGE TWEETS
+### 200 MOST COMMON WORDS FROM TWEETS
 
 
-## Tweet Classification with Bidirectional Encoder Representations from Transformers (BERT)
+## Tweet Classification with BERT
 
-BERT is an open source machine learning framework developed by Google in 2018 used for advanced Natural Language Processing tasks. The model was developed by Jacob Devlin and other Google employees and was trained on English Wikipedia (2,500M words) and BookCorpus (800M words). The key differentiator in the BERT model is its Bidirectionality or rather nondirectionality. Rather than reading sentences right to left, the model is able to read sentences all at once. I won't get too deep into the workings of BERT but more can be read about it here. 
+BERT which stands for **Bidirectional Encoder Representations from Transformers** is an open source machine learning framework developed by Google in 2018 used for advanced Natural Language Processing tasks. The model was trained on English Wikipedia (2,500M words) and BookCorpus (800M words). The key differentiator in the BERT model is its Bidirectionality or rather nondirectionality. Rather than reading sentences right to left, the model is able to read sentences all at once. I won't get too deep into the workings of BERT but more can be read about it [here](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270). 
 
-I am aware that **Open AI's GPT3** performs better than BERT at text classification, but due to limited access I decided to use BERT for this classification project. 
+I am aware that Open AI's GPT3 performs better than BERT at text classification, but due to limited access I decided to use BERT for this classification project. 
 
 ### Implementation of BERT Base Model
 ```
@@ -223,21 +223,22 @@ def sentiment_score(tweet):
 ```
 
 **In this case:**
-- **1 is very negative**
-- **2 is negative**
-- **3 is neutral**
-- **5 is very positive**
+- 1 is **very negative**
+- 2 is **negative**
+- 3 is **neutral**
+- 4 is **positive**
+- 5 is **very positive**
 
-**Lets test our function.**
+### Testing sentiment_score
 
 ![Image!](Images/test1.png)
 
-**One more time**
 
 ![Image!](Images/test2.png)
 
 As we can see the function does a reasonably good job classifying the sentiment of the tweets. 
 
+### Passing all tweets to BERT
 Now we need to pass every tweet in our 100,000 tweet sample into the model. 
 
 ```
@@ -275,5 +276,8 @@ After running BERT on all 100,000 tweets, the distribution the model assigned wa
 6. https://towardsdatascience.com/sentiment-analysis-in-10-minutes-with-bert-and-hugging-face-294e8a04b671
 
 7. https://github.com/SpencerPao/Natural-Language-Processing/blob/main/BERT/BERT_Code_Implementation.ipynb
+
+8. https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270
+
 
 
