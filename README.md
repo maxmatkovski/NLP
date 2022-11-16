@@ -193,6 +193,8 @@ plt.show()
 
 BERT which stands for **Bidirectional Encoder Representations from Transformers** is an open source machine learning framework developed by Google in 2018 used for advanced Natural Language Processing tasks. The model was trained on English Wikipedia (2,500M words) and BookCorpus (800M words). The key differentiator in the BERT model is its Bidirectionality or rather nondirectionality. Rather than reading sentences right to left, the model is able to read sentences all at once. I won't get too deep into the workings of BERT but more can be read about it [here](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270). 
 
+![Image!](Images/bert.png)
+
 I am aware that Open AI's GPT3 performs better than BERT at text classification, but due to limited access I decided to use BERT for this classification project. 
 
 ### Implementation of BERT Base Model
