@@ -182,14 +182,20 @@ plt.show()
 ```
 
 ![Image!](Images/word_cloud.png)
-200 MOST COMMON WORDS FROM 100,000 CLIMATE CHANGE TWEETS
+### 200 MOST COMMON WORDS FROM 100,000 CLIMATE CHANGE TWEETS
+
+
+## Tweet Classification with BERT
+
+**BERT** stands for **Bidirectional Encoder Representations from Transformers** and is an open source machine learning framework developed by Google in 2018 used for advanced Natural Language Processing tasks. The model was developed by Jacob Devlin and other Google employees and was trained on English Wikipedia (2,500M words) and BookCorpus(800M words). The key differentiator in the BERT model is its Bidirectionality or rather nondirectionality. Rather than reading sentences right to left, the model is able to read sentences all at once. I won't get too deep into the workings of BERT but more can be read about it here. 
+
+I am aware that **Open AI's GPT3** performs better than BERT at text classification, but due to limited access I decided to use BERT for this classification project. 
 
 ---------------------------------------------------
 
 
 ## Further ideas
 
-- Bert model prediction
 - plot histogram of the responses and overlay with the 'predicted ideas of twitter political skew'
 
 ## References
@@ -204,3 +210,4 @@ plt.show()
 
 5. https://www.wikiwand.com/en/Stop_words
 
+6. https://towardsdatascience.com/sentiment-analysis-in-10-minutes-with-bert-and-hugging-face-294e8a04b671
