@@ -250,12 +250,18 @@ for i in range(length):
     df['sentiment'][i] = sentiment_score(df.iloc[i]['Text'])
 ```
 
-I did this with the for loop above. The model ended up taking much longer to run than I expected. To iterate over all 100,000 tweets it took a little over four hours to run. 
+I did this with the for loop above. The model ended up taking much longer to run than I expected. To iterate over all 100,000 tweets it took a little over **four hours** to run. 
 
 # Results
-After running BERT on all 100,000 tweets, the distribution the model assigned was as follows. 
+After running BERT on all 100,000 tweets, the distribution of sentiment classification was as follows. 
 
 ![Image!](Images/final-bar-graph.png)
+
+As we can see the distribution of sentiment definetly skews towards negative tweets. After 1, the most common sentiment was a 5. This confirmed my intuition that twitter fosters an environment where extreme opinions are more prevalent, whether they are negative or negative. 
+
+The average tweet sentiment value of all 100,000 tweets was 2.8, meaning that the average tweet on twitter about climate change is slightly more negative than neutral. 
+
+Going forward, I think we can all realize that twitter is a place that fosters extreme opinions, and as with most things in life, the truth lies somewhere in the middle. 
 
 ## Further ideas
 
