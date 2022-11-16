@@ -89,9 +89,11 @@ def clean_string(a):
 ```
 
 **String before processing**
+
 ![Image!](Images/image4.png)
 
 **After processing string**
+
 ![Image!](Images/image5.png)
 
 As we can see the string is being processed correctly, and we've successfully removed the undesirable elements. 
@@ -185,9 +187,9 @@ plt.show()
 ### 200 MOST COMMON WORDS FROM 100,000 CLIMATE CHANGE TWEETS
 
 
-## Tweet Classification with BERT
+## Tweet Classification with Bidirectional Encoder Representations from Transformers (BERT)
 
-**BERT** stands for **Bidirectional Encoder Representations from Transformers** and is an open source machine learning framework developed by Google in 2018 used for advanced Natural Language Processing tasks. The model was developed by Jacob Devlin and other Google employees and was trained on English Wikipedia (2,500M words) and BookCorpus(800M words). The key differentiator in the BERT model is its Bidirectionality or rather nondirectionality. Rather than reading sentences right to left, the model is able to read sentences all at once. I won't get too deep into the workings of BERT but more can be read about it here. 
+BERT is an open source machine learning framework developed by Google in 2018 used for advanced Natural Language Processing tasks. The model was developed by Jacob Devlin and other Google employees and was trained on English Wikipedia (2,500M words) and BookCorpus (800M words). The key differentiator in the BERT model is its Bidirectionality or rather nondirectionality. Rather than reading sentences right to left, the model is able to read sentences all at once. I won't get too deep into the workings of BERT but more can be read about it here. 
 
 I am aware that **Open AI's GPT3** performs better than BERT at text classification, but due to limited access I decided to use BERT for this classification project. 
 
