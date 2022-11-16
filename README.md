@@ -2,17 +2,24 @@
 
 ## Introduction
 
-With the recent midterm elections passed the controversial topic of climate change was once again being discussed in the open. Just here in California there were several propositions on the ballot relating to climate change. However, it's not always easy to understand the general public's view of climate change. Depending on what news source you follow, one can get very different impressions of the importance of climate change and society's general attitude towards the subject. 
+With the recent midterm elections, the controversial topic of climate change was once again being discussed in the open. Just here in California, there were several propositions on the ballot relating to climate change. However, it's not always easy to understand the general public's view of climate change. Depending on what news source you follow, one can get very different impressions of the importance of climate change and society's general attitude towards the subject. 
 
-In order to better understand the general view of climate change, I thought to look to twitter as good place to measure public sentiment of Climate Change. 
+In order to better understand the general view of climate change, I thought to look to twitter as a good place to measure the public sentiment on Climate Change. 
 
 ![Image!](Images/image2.jpg)
 
 ## Gathering Data
 
-I've tried scraping tweets off of twitter in the past, but I've always run into problems of some sort. Most notably I've tried using the popular library tweepy and twitter's official api.I've overall just found these two techniques a bit limiting, as they greatly limit the amount of tweets you're able to scrape and the setup is a bit difficult. I recently discovered snscrape, and I found it to be extremely easy to use. 
+I've tried scraping tweets off of twitter in the past, but I've always run into problems of some sort. Most notably I've tried using the popular library tweepy, and I've also tried using twitter's official api. Overall, I've found both of these techniques to be a bit limiting, as both limit the amount of tweets you're able to scrape. I recently discovered snscrape, an open source library that allows you to scrape a variety of social networking sites. More info about the libary can be found [here](https://github.com/JustAnotherArchivist/snscrape).
 
-Here's what the code I used to scrape tweets looked like. (Source referenced below).
+Overall, I found snscrape to be extremely easy to use, and I would recommend it to any looking to do a similar project. 
+
+### Choosing a Data Size
+Because snscrape doesn't limit the amount of tweets you can scrape, I thought it would be interesting to push the limits with how many tweets I could scrape off of twitter. I first started by scraping 100 tweets, and I proceeded to increase the scraping quantity by a factor of ten. 
+
+Ultimately, I decided to stop at 100,000 tweets because the run time started to get pretty lengthy, and this is more than enough tweets to get a general understanding of twitter's sentiment. 
+
+Here's the code I used to scrape the tweets.
 
 ```
 import snscrape.modules.twitter as sntwitter
@@ -35,13 +42,6 @@ tweets_df = pd.DataFrame(tweets_list, columns=['Datetime', 'Tweet Id', 'Text', '
 
 The query above searches twitter for the key word **"Climate Change"** and returns the specified amount of tweets. Based off of the paramaters I set, the scraper would scrape tweets from January 1, 2021 until 11:59 pm of November 8, 2022. This is helfpul as we'll be able to capture tweets from the 2022 Midterm Election. Tweets were returned in order of most recent. 
 
-
-## Choosing a Data Size
-Because snscrape doesn't limit the amount of tweets you can scrape, I thought it would be interesting to see just how many tweets I could scrape off of twitter. I first started by scraping 100 tweets, and I proceeded to increase the scraping quantity by a factor of ten ie. 1,000, 10,000, and so on. 
-
-Currently, the largest amount of tweets I've scraped is 10,000. I'm currently run the script with 100,000 tweets, but it may take a very long time. My goal is to ultimately scrape 1,000,000 tweets, but I'm not sure my computer will be able to execute it.
-
-Ultimately, I decided to go with 100,000 tweets because I was able to execute it and I think this wil be more than enough to get an accurate understanding of the sentiment on twitter .
 
 
 ## Data Processing
