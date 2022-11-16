@@ -101,7 +101,7 @@ def clean_string(a):
 
 As we can see the string is being processed correctly, and we've successfully removed the undesirable elements. 
 
-Now I'm going to run the function on all elements in df['Text'].
+Now I'm going to run the function on all elements in **df['Text']**.
 
 ```
 length = len(df)
