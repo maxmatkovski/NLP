@@ -225,6 +225,7 @@ def sentiment_score(tweet):
 - **5 is very positive**
 
 **Lets test our function.**
+
 ![Image!](Images/test1.png)
 
 **One more time**
