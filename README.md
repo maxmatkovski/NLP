@@ -224,13 +224,29 @@ def sentiment_score(tweet):
 - **3 is neutral**
 - **5 is very positive**
 
-Lets test our function. 
+**Lets test our function.**
 ![Image!](Images/test1.png)
+
+**One more time**
 
 ![Image!](Images/test2.png)
 
+As we can see the function does a reasonably good job classifying the sentiment of the tweets. 
 
-**Testing function
+Now we need to pass every tweet in our 100,000 tweet sample into the model. 
+
+```
+length = len(df)
+for i in range(length):
+    if i % 100 == 0:
+        print(i, ' tweets have been processed')
+    
+    df['sentiment'][i] = sentiment_score(df.iloc[i]['Text'])
+```
+
+I did this with the for loop above. The model ended up taking much longer to run than I expected. To iterate over all 100,000 tweets it took a little over four hours to run. 
+
+
 ## Further ideas
 
 - plot histogram of the responses and overlay with the 'predicted ideas of twitter political skew'
