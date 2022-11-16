@@ -188,8 +188,6 @@ plt.show()
 ```
 
 ![Image!](Images/word_cloud.png)
-### 200 MOST COMMON WORDS FROM TWEETS
-
 
 ## Tweet Classification with BERT
 
