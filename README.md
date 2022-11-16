@@ -193,9 +193,44 @@ BERT is an open source machine learning framework developed by Google in 2018 us
 
 I am aware that **Open AI's GPT3** performs better than BERT at text classification, but due to limited access I decided to use BERT for this classification project. 
 
----------------------------------------------------
+### Implementation of BERT Base Model
+```
+# Import necessary libraries
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import torch
+import requests
+import re
+
+# Instantiate Model
+tokenizer = AutoTokenizer.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
+
+model = AutoModelForSequenceClassification.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
+```
+
+Next let's create a function to use the model to predict sentiment. 
+
+```
+def sentiment_score(tweet):
+    tweet = str(tweet)
+    tokens = tokenizer.encode(tweet, return_tensors='pt')
+    result = model(tokens)
+    return int(torch.argmax(result.logits))+1
+
+```
+
+**In this case:**
+- **1 is very negative**
+- **2 is negative**
+- **3 is neutral**
+- **5 is very positive**
+
+Lets test our function. 
+![Image!](Images/test1.png)
+
+![Image!](Images/test2.png)
 
 
+**Testing function
 ## Further ideas
 
 - plot histogram of the responses and overlay with the 'predicted ideas of twitter political skew'
@@ -213,3 +248,7 @@ I am aware that **Open AI's GPT3** performs better than BERT at text classificat
 5. https://www.wikiwand.com/en/Stop_words
 
 6. https://towardsdatascience.com/sentiment-analysis-in-10-minutes-with-bert-and-hugging-face-294e8a04b671
+
+7. https://github.com/SpencerPao/Natural-Language-Processing/blob/main/BERT/BERT_Code_Implementation.ipynb
+
+
