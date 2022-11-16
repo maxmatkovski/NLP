@@ -54,7 +54,9 @@ After scraping 100,000 tweets with the keyword **"Climate Change"**, this is wha
 
 ![Image!](Images/image3.png)
 
-As we can see above the dataframe contains 100,001 rows and 4 columsn, thus we've succesfully scraped over 100,000 tweets. 
+### Cleaning Text Data
+
+As we can see above the dataframe contains 100,001 rows and 4 columns, thus we've succesfully scraped over 100,000 tweets. 
 
 However, because these strings were taken off of twitter, they contain emojis, urls and other types of data that will most likely affect the efficacy of our analysis. 
 
@@ -96,16 +98,18 @@ def clean_string(a):
 
 ![Image!](Images/image5.png)
 
+
 As we can see the string is being processed correctly, and we've successfully removed the undesirable elements. 
 
-Now I needed to run this function on all 100,000 tweets in the dataset. I did this via a single for loop. The time complexity of the function call is O(N), and I don't think there's a more efficient way to call the function. 
+Now I'm going to run the function on all elements in df['Text'].
 
 ```
-for i in range(100001):
+length = len(df)
+for i in range(length):
     df['Text'][i] = clean_string(df.iloc[i]['Text'])
 ```
 
-Due to the size of this data, one thing that I'm worried about is run time, but the function only took about two minutes to fully run all 100,000 iterations. 
+Due to the size of this data, one thing that I'm worried about the future is run time. However, this run wasn't too bad, and I was able to transform all of the text elements in a runtime of about five minutes. 
 
 ## Exploratory Data Analysis
 
