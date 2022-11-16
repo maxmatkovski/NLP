@@ -250,16 +250,22 @@ for i in range(length):
 
 I did this with the for loop above. The model ended up taking much longer to run than I expected. To iterate over all 100,000 tweets it took a little over **four hours** to run. 
 
-# Results
+## Results
 After running BERT on all 100,000 tweets, the distribution of sentiment classification was as follows. 
 
 ![Image!](Images/final-bar-graph.png)
 
-As we can see the distribution of sentiment definetly skews towards negative tweets. After 1, the most common sentiment was a 5. This confirmed my intuition that twitter fosters an environment where extreme opinions are more prevalent, whether they are negative or positive. 
+As we can see the distribution of sentiment definitely skews towards negative tweets. After 1, the most common sentiment was a 5. This confirmed my intuition that twitter fosters an environment where extreme opinions are more prevalent, whether they are negative or positive. 
 
-The average tweet sentiment value of all 100,000 tweets was 2.8, meaning that the average tweet on twitter about climate change is slightly more negative than neutral. 
+### Statistics 
+- Average: **2.786**
+- Median: **3**
+- Mode: **1**
+- Standard Deviation: **1.63**
 
-Going forward, I think we can all realize that twitter is a place that fosters extreme opinions, and as with most things in life, the truth lies somewhere in the middle. 
+Of all the 100,000 tweets the average was 2.786, meaning that the average tweet on twitter about climate change is slightly more negative than neutral. 
+
+Given the data, it's clear that twitter is a place that fosters extreme opinions. Over 60% of the tweets were classified as a either a 1 or a 5. Thus, twitter is clearly a place that is unideal to educate oneself about important issues such as climate change. 
 
 ## References
 
